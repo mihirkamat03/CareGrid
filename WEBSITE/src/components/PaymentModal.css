@@ -1,0 +1,256 @@
+.payment-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(9, 9, 11, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.payment-modal-card {
+  background: #18181b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  width: 90%;
+  max-width: 420px;
+  padding: 32px;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+  color: #fff;
+  overflow: hidden;
+}
+
+.close-button {
+  position: absolute;
+  top: 24px; right: 24px;
+  background: transparent;
+  border: none;
+  color: #a1a1aa;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-button:hover { color: #fff; }
+
+.payment-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.icon-circle {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.text-emerald { color: #10b981; }
+.text-muted { color: #a1a1aa; font-size: 0.9rem; }
+
+.payment-header h2 {
+  font-size: 1.5rem;
+  margin: 0 0 4px 0;
+  font-weight: 600;
+}
+
+.payment-amount-box {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.glowing-amount {
+  font-size: 2.5rem;
+  margin: 8px 0 0 0;
+  color: #38bdf8;
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+.card-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  color: #a1a1aa;
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  color: #a1a1aa;
+}
+
+.input-group input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 12px 12px 12px 40px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.input-row .input-group input {
+  padding-left: 12px;
+}
+
+.input-row .input-group:last-child input {
+  padding-left: 40px;
+}
+
+.input-row {
+  display: flex;
+  gap: 16px;
+}
+
+.pay-button {
+  width: 100%;
+  background: linear-gradient(135deg, #38bdf8, #0284c7);
+  color: #fff;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+
+.pay-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(56, 189, 248, 0.4);
+}
+
+.secure-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  color: #71717a;
+  font-size: 0.8rem;
+}
+
+/* Processing State */
+.processing-state, .success-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  text-align: center;
+}
+
+.spinner-ring {
+  width: 64px;
+  height: 64px;
+  border: 4px solid rgba(56, 189, 248, 0.1);
+  border-top-color: #38bdf8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 24px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.processing-state h3 {
+  font-size: 1.25rem;
+  margin: 0 0 8px 0;
+}
+
+/* Success State */
+.check-wrapper {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  border: 2px solid #10b981;
+}
+
+.check-icon {
+  color: #10b981;
+}
+
+.success-state h2 {
+  font-size: 1.5rem;
+  margin: 0 0 8px 0;
+  color: #10b981;
+}
+
+/* Confetti */
+.confetti-container {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  width: 8px; height: 8px;
+  background: #38bdf8;
+  animation: fall 2s linear infinite;
+  opacity: 0;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(300px) rotate(360deg); opacity: 0; }
+}
+
+/* Generate different confetti pieces */
+.piece-0 { left: 10%; background: #10b981; animation-delay: 0.1s; }
+.piece-1 { left: 20%; background: #38bdf8; animation-delay: 0.3s; }
+.piece-2 { left: 30%; background: #fbbf24; animation-delay: 0.2s; }
+.piece-3 { left: 40%; background: #f43f5e; animation-delay: 0.5s; }
+.piece-4 { left: 50%; background: #10b981; animation-delay: 0.4s; }
+.piece-5 { left: 60%; background: #38bdf8; animation-delay: 0.1s; }
+.piece-6 { left: 70%; background: #fbbf24; animation-delay: 0.3s; }
+.piece-7 { left: 80%; background: #f43f5e; animation-delay: 0.6s; }
+.piece-8 { left: 90%; background: #10b981; animation-delay: 0.2s; }
+.piece-9 { left: 15%; background: #38bdf8; animation-delay: 0.4s; }
+.piece-10 { left: 25%; background: #fbbf24; animation-delay: 0.1s; }
+.piece-11 { left: 35%; background: #f43f5e; animation-delay: 0.5s; }
+.piece-12 { left: 45%; background: #10b981; animation-delay: 0.2s; }
+.piece-13 { left: 55%; background: #38bdf8; animation-delay: 0.3s; }
+.piece-14 { left: 65%; background: #fbbf24; animation-delay: 0.1s; }
+.piece-15 { left: 75%; background: #f43f5e; animation-delay: 0.4s; }
+.piece-16 { left: 85%; background: #10b981; animation-delay: 0.2s; }
+.piece-17 { left: 95%; background: #38bdf8; animation-delay: 0.6s; }
+.piece-18 { left: 5%; background: #fbbf24; animation-delay: 0.3s; }
+.piece-19 { left: 50%; background: #f43f5e; animation-delay: 0.1s; }
