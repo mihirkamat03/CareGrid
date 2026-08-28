@@ -1,0 +1,9 @@
+{
+  "name": "caregrid",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm --prefix WEBSITE install && npm --prefix WEBSITE run build",
+    "dev": "npm --prefix WEBSITE run dev"
+  }
+}

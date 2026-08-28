@@ -1,0 +1,10 @@
+{
+  "buildCommand": "cd WEBSITE && npm install && npm run build",
+  "outputDirectory": "WEBSITE/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
